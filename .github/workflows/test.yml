@@ -21,6 +21,11 @@ jobs:
       - name: Set working directory
         run: cd ${{ github.workspace }}/actions/bicep
 
+      - name: Debug
+        run: |
+          pwd
+          ls -R
+
       - name: Set up Azure CLI
         uses: azure/login@v1
         with:
