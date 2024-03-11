@@ -1,18 +1,10 @@
-@description('storage account name')
-param storage_account_name string = 'st${uniqueString(resourceGroup().name)}'
-
-@description('storage account location')
-param location string = 'eastus' 
-
-
-resource storageaccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
-  name: storage_account_name
-  location: location
-  kind: 'StorageV2'
-  properties:{
-    minimumTlsVersion: 'TLS1_2'
-  }
-  sku: {
-    name: 'Premium_LRS'
+resource mg 'Microsoft.Management/managementGroups@2021-04-01-preview' = {
+  name: 'MyTenantLevelManagementGroup'
+  targetScope: 'tenant'
+  properties: {
+    displayName: 'My Tenant Level Management Group'
+    details: {
+      version: '1.0'
+    }
   }
 }
