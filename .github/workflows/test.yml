@@ -26,6 +26,6 @@ jobs:
       - name: Create Resource Group and Deploy Resources
         run: |
            # az group create --name $AZURE_RESOURCEGROUP_NAME --location $LOCATION
-           # az deployment group create --resource-group Newresource --template-file './actions/bicep/strorage.bicep'
-           az deployment sub create --location $LOCATION --template-file './actions/bicep/strorage.bicep'
+           az deployment group create --resource-group Newresource --template-file './actions/bicep/strorage.bicep'
+           # az deployment sub create --location $LOCATION --template-file './actions/bicep/strorage.bicep'
 
