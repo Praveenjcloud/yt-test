@@ -12,9 +12,9 @@ param environmentType string
 @maxLength(13)
 param resourceNameSuffix string = uniqueString(resourceGroup().id)
 
-var appServiceAppName = 'toy-website-${resourceNameSuffix}'
-var appServicePlanName = 'toy-website-plan'
-var toyManualsStorageAccountName = 'toyweb${resourceNameSuffix}'
+var appServiceAppName = 'test-website-${resourceNameSuffix}' // Updated appServiceAppName
+var appServicePlanName = 'test-website-plan'
+var toyManualsStorageAccountName = 'testweb${resourceNameSuffix}' // Updated toyManualsStorageAccountName
 
 // Define the SKUs for each component based on the environment type.
 var environmentConfigurationMap = {
@@ -24,20 +24,20 @@ var environmentConfigurationMap = {
         name: 'F1'
         capacity: 1
       }
-    }
+    },
     toyManualsStorageAccount: {
       sku: {
         name: 'Standard_LRS'
       }
     }
-  }
+  },
   prod: {
     appServicePlan: {
       sku: {
         name: 'S1'
         capacity: 2
       }
-    }
+    },
     toyManualsStorageAccount: {
       sku: {
         name: 'Standard_ZRS'
