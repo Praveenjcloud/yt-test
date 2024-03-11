@@ -26,7 +26,7 @@ jobs:
       - name: Create Resource Group and Deploy Resources
         run: |
            # az group create --name $AZURE_RESOURCEGROUP_NAME --location $LOCATION
-             az account management-group create --name Contoso123
+             az account management-group create --name Con --display-name Display
 
       # - name: Azure CLI 
       #   uses: azure/arm-deploy@v1
