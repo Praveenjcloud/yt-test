@@ -25,8 +25,12 @@ jobs:
 
       - name: Create Resource Group and Deploy Resources
         run: |
-          parameters: environmentType=${{ env.ENVIRONMENT }}
-           # az group create --name $AZURE_RESOURCEGROUP_NAME --location $LOCATION
-           az deployment group create --resource-group Newresource --template-file './actions/bicep/strorage.bicep'
-           # az deployment sub create --location $LOCATION --template-file './actions/bicep/strorage.bicep'
+           az group create --name $AZURE_RESOURCEGROUP_NAME --location $LOCATION
 
+      - name: Azure CLI 
+        uses: azure/arm-deploy@v1
+        with:
+          deploymentName: ${{ github.run_number }}
+          resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
+          template: ./actions/bicep/strorage.bicep
+          parameters: environmentType=${{ env.ENVIRONMENT }}
