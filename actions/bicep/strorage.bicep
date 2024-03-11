@@ -3,7 +3,7 @@ param location string = resourceGroup().location
 
 @description('The type of environment. This must be nonprod or prod.')
 @allowed([
-  'nonprod',
+  'nonprod'
   'prod'
 ])
 param environmentType string
@@ -12,32 +12,32 @@ param environmentType string
 @maxLength(13)
 param resourceNameSuffix string = uniqueString(resourceGroup().id)
 
-var appServiceAppName = 'test-website-${resourceNameSuffix}' // Changed 'toy' to 'test'
-var appServicePlanName = 'test-website-plan'
-var toyManualsStorageAccountName = 'testweb${resourceNameSuffix}' // Changed 'toy' to 'test'
+var appServiceAppName = 'toy-website-${resourceNameSuffix}'
+var appServicePlanName = 'toy-website-plan'
+var toyManualsStorageAccountName = 'toyweb${resourceNameSuffix}'
 
 // Define the SKUs for each component based on the environment type.
 var environmentConfigurationMap = {
   nonprod: {
     appServicePlan: {
       sku: {
-        name: 'F1',
+        name: 'F1'
         capacity: 1
       }
-    },
+    }
     toyManualsStorageAccount: {
       sku: {
         name: 'Standard_LRS'
       }
     }
-  },
+  }
   prod: {
     appServicePlan: {
       sku: {
-        name: 'S1',
+        name: 'S1'
         capacity: 2
       }
-    },
+    }
     toyManualsStorageAccount: {
       sku: {
         name: 'Standard_ZRS'
