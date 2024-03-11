@@ -26,4 +26,4 @@ jobs:
       - name: Create Resource Group and Deploy Resources
         run: |
           # Uncomment the following line for actual deployment
-           az deployment group create --resource-group Newresource --template-file './Deploy/main.bicep'
+           az deployment group create --resource-group Newresource --template-file './actions/bicep/strorage.bicep'
