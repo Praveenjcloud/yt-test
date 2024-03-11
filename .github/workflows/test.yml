@@ -18,14 +18,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set working directory
-        run: cd ${{ github.workspace }}/actions/bicep
-
-      - name: Debug
-        run: |
-          pwd
-          ls -R
-
       - name: Set up Azure CLI
         uses: azure/login@v1
         with:
@@ -33,5 +25,5 @@ jobs:
 
       - name: Create Resource Group and Deploy Resources
         run: |
-          az group create --name $AZURE_RESOURCEGROUP_NAME --location $LOCATION
-          az deployment group create --resource-group $AZURE_RESOURCEGROUP_NAME --template-file './Deploy/main.bicep'
+          # Uncomment the following line for actual deployment
+          # az deployment group create --resource-group test --template-file './Deploy/main.bicep'
