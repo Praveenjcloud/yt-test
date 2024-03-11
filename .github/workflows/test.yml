@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      AZURE_RESOURCEGROUP_NAME: newtest123
+      AZURE_RESOURCEGROUP_NAME: newtest1
       LOCATION: eastus
       ENVIRONMENT: nonprod
 
