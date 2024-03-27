@@ -37,4 +37,4 @@ jobs:
          # template: ./actions/bicep/strorage.bicep
           template: ./actions/bicep/managementgroup.bicep
          # parameters: environmentType=${{ env.ENVIRONMENT }} 
-          parameters: environmentType=${{ env.ENVIRONMENT }}
+          parameters: targetMgId=${{ env.managementid }} subcriptionid=${{ env.subcriptionid }}
