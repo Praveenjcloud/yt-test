@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      AZURE_RESOURCEGROUP_NAME: newtes
+      AZURE_RESOURCEGROUP_NAME: newtesriyas
       LOCATION: eastus
       ENVIRONMENT: nonprod
 
