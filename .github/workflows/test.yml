@@ -13,8 +13,8 @@ jobs:
       AZURE_RESOURCEGROUP_NAME: newtesriyas
       LOCATION: eastus
       ENVIRONMENT: prod
-      subcriptionid: sad
-      managementid: sss
+      subcriptionid: 254dffa9-a7b0-45c4-9c4a-bc062177541e
+      managementid: my-test
 
     steps:
       - name: Checkout Repository
