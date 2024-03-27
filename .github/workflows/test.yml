@@ -36,4 +36,5 @@ jobs:
           resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
          # template: ./actions/bicep/strorage.bicep
           template: ./actions/bicep/managementgroup.bicep
+         # parameters: environmentType=${{ env.ENVIRONMENT }} 
           parameters: environmentType=${{ env.ENVIRONMENT }}
