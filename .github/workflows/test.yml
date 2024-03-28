@@ -13,8 +13,8 @@ jobs:
       AZURE_RESOURCEGROUP_NAME: newtesriyas
       LOCATION: eastus
       ENVIRONMENT: prod
-      subcriptionid: 254dffa9-a7b0-45c4-9c4a-bc062177541e
-      managementid: my-test
+      SUBSCRIPTION_ID: 254dffa9-a7b0-45c4-9c4a-bc062177541e
+      MANAGEMENT_ID: my-test
 
     steps:
       - name: Checkout Repository
@@ -34,7 +34,5 @@ jobs:
         with:
           deploymentName: ${{ github.run_number }}
           resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
-         # template: ./actions/bicep/strorage.bicep
           template: ./actions/bicep/managementgroup.bicep
-         # parameters: environmentType=${{ env.ENVIRONMENT }} 
-          parameters: targetMgId=${{ env.managementid }} subcriptionid=${{ env.subcriptionid }}
+          parameters: targetMgId=${{ env.MANAGEMENT_ID }} subscriptionId=${{ env.SUBSCRIPTION_ID }}
